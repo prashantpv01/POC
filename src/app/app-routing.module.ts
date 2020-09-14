@@ -1,10 +1,15 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { UpdateComponent } from './customer/update/update.component'
+import { ListComponent } from './customer/list/list.component'
 
 const routes: Routes = [
   {
-    path: 'update/:id',
+    path: '',
+    component: ListComponent
+  },
+  {
+    path: 'update/:CGPCGP',
     component: UpdateComponent
   }
 ];
