@@ -8,6 +8,7 @@
       <th>Dummy</th>
       <th>Dummy</th>
       <th>Dummy</th>
+      <th></th>
     </tr>
     <tr *ngFor="let item of xmlItems">
       <td>{{item.CGPCGP}}</td>
@@ -17,6 +18,7 @@
       <td>{{item.CGPLCUSR}}</td>
       <td>{{item.CGPLCDAT}}</td>
       <td>{{item.CGPDLT}}</td>
+      <td><button type="button" (click)="updateCustomer(item.CGPCGP)">Edit</button></td>
     </tr>
   </table>
 </div>

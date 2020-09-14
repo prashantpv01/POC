@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import xml2js from 'xml2js';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-root',
@@ -10,7 +11,7 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 export class AppComponent {
   title = 'spms';
   public xmlItems: any;
-  constructor(private _http: HttpClient) {
+  constructor(private _http: HttpClient, private router: Router) {
     this.loadXML();
   }
   loadXML() {
@@ -62,4 +63,9 @@ export class AppComponent {
       });
     });
   }
+  updateCustomer(CGPCGP: string) {
+    console.log(CGPCGP)
+    this.router.navigate(['update', CGPCGP]);
+  }
 }
+
