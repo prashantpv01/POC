@@ -1,0 +1,120 @@
+  <?xml version="1.0" ?> 
+<Recordset>
+<Record>
+  <CGPCGP>AU</CGPCGP> 
+  <CGPDSC>AU - Audi</CGPDSC> 
+  <CGPPIM>XMLPDF</CGPPIM> 
+  <CGPPTR>1</CGPPTR> 
+  <CGPLCUSR>ZPalotai</CGPLCUSR> 
+  <CGPLCDAT>2017-12-07</CGPLCDAT> 
+  <CGPDLT>N</CGPDLT> 
+  </Record>
+ <Record>
+  <CGPCGP>BM</CGPCGP> 
+  <CGPDSC>BM - BMW AG</CGPDSC> 
+  <CGPPIM>SELXMLPDF</CGPPIM> 
+  <CGPPTR /> 
+  <CGPLCUSR>GFroehlich</CGPLCUSR> 
+  <CGPLCDAT>2017-06-16</CGPLCDAT> 
+  <CGPDLT>N</CGPDLT> 
+  </Record>
+ <Record>
+  <CGPCGP>DC</CGPCGP> 
+  <CGPDSC>DC - Daimler</CGPDSC> 
+  <CGPPIM>XMLPDF</CGPPIM> 
+  <CGPPTR>1</CGPPTR> 
+  <CGPLCUSR>GFroehlich</CGPLCUSR> 
+  <CGPLCDAT>2012-04-19</CGPLCDAT> 
+  <CGPDLT>N</CGPDLT> 
+  </Record>
+ <Record>
+  <CGPCGP>FM</CGPCGP> 
+  <CGPDSC>FM - Ford Mtr.Co.Auto Alliance</CGPDSC> 
+  <CGPPIM>PDF</CGPPIM> 
+  <CGPPTR /> 
+  <CGPLCUSR>ZPalotai</CGPLCUSR> 
+  <CGPLCDAT>2016-10-19</CGPLCDAT> 
+  <CGPDLT>N</CGPDLT> 
+  </Record>
+ <Record>
+  <CGPCGP>GM</CGPCGP> 
+  <CGPDSC>GM - General Motors</CGPDSC> 
+  <CGPPIM>CSV</CGPPIM> 
+  <CGPPTR /> 
+  <CGPLCUSR>ZPalotai</CGPLCUSR> 
+  <CGPLCDAT>2018-12-14</CGPLCDAT> 
+  <CGPDLT>N</CGPDLT> 
+  </Record>
+ <Record>
+  <CGPCGP>JL</CGPCGP> 
+  <CGPDSC>JL - Jaguar-Land Rover</CGPDSC> 
+  <CGPPIM>PDF</CGPPIM> 
+  <CGPPTR>1</CGPPTR> 
+  <CGPLCUSR>ZPalotai</CGPLCUSR> 
+  <CGPLCDAT>2017-12-07</CGPLCDAT> 
+  <CGPDLT>N</CGPDLT> 
+  </Record>
+ <Record>
+  <CGPCGP>LE</CGPCGP> 
+  <CGPDSC>LE - Lear Intercompany</CGPDSC> 
+  <CGPPIM>PDF</CGPPIM> 
+  <CGPPTR /> 
+  <CGPLCUSR>GFroehlich</CGPLCUSR> 
+  <CGPLCDAT>2017-06-06</CGPLCDAT> 
+  <CGPDLT>N</CGPDLT> 
+  </Record>
+ <Record>
+  <CGPCGP>MC</CGPCGP> 
+  <CGPDSC>MC - Magna</CGPDSC> 
+  <CGPPIM>PDF</CGPPIM> 
+  <CGPPTR>1</CGPPTR> 
+  <CGPLCUSR>GFroehlich</CGPLCUSR> 
+  <CGPLCDAT>2017-06-23</CGPLCDAT> 
+  <CGPDLT>N</CGPDLT> 
+  </Record>
+ <Record>
+  <CGPCGP>OP</CGPCGP> 
+  <CGPDSC>OP - Opel (PSA)</CGPDSC> 
+  <CGPPIM>PDF</CGPPIM> 
+  <CGPPTR>1</CGPPTR> 
+  <CGPLCUSR>ZPalotai</CGPLCUSR> 
+  <CGPLCDAT>2018-12-14</CGPLCDAT> 
+  <CGPDLT>N</CGPDLT> 
+  </Record>
+ <Record>
+  <CGPCGP>PO</CGPCGP> 
+  <CGPDSC>PO - Porsche</CGPDSC> 
+  <CGPPIM>PDF</CGPPIM> 
+  <CGPPTR>1</CGPPTR> 
+  <CGPLCUSR>ZPalotai</CGPLCUSR> 
+  <CGPLCDAT>2016-09-19</CGPLCDAT> 
+  <CGPDLT>N</CGPDLT> 
+  </Record>
+ <Record>
+  <CGPCGP>VM</CGPCGP> 
+  <CGPDSC>VM - Valmet</CGPDSC> 
+  <CGPPIM>SELXMLPDF</CGPPIM> 
+  <CGPPTR>1</CGPPTR> 
+  <CGPLCUSR>GFroehlich</CGPLCUSR> 
+  <CGPLCDAT>2016-11-23</CGPLCDAT> 
+  <CGPDLT>N</CGPDLT> 
+  </Record>
+ <Record>
+  <CGPCGP>VO</CGPCGP> 
+  <CGPDSC>VO - Volvo</CGPDSC> 
+  <CGPPIM>PDF</CGPPIM> 
+  <CGPPTR>1</CGPPTR> 
+  <CGPLCUSR>ZPalotai</CGPLCUSR> 
+  <CGPLCDAT>2018-06-28</CGPLCDAT> 
+  <CGPDLT>N</CGPDLT> 
+  </Record>
+ <Record>
+  <CGPCGP>VW</CGPCGP> 
+  <CGPDSC>VW - Volkswagen</CGPDSC> 
+  <CGPPIM>XMLPDF</CGPPIM> 
+  <CGPPTR>1</CGPPTR> 
+  <CGPLCUSR>GFroehlich</CGPLCUSR> 
+  <CGPLCDAT>2012-04-19</CGPLCDAT> 
+  <CGPDLT>N</CGPDLT> 
+  </Record>
+  </Recordset>
