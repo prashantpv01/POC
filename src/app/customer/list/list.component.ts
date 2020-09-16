@@ -2,20 +2,35 @@ import { Component, OnInit } from '@angular/core';
 import xml2js from 'xml2js';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Router } from '@angular/router';
-
+import { Detail } from '../detail'
 @Component({
   selector: 'app-list',
   templateUrl: './list.component.html',
   styleUrls: ['./list.component.scss']
 })
 export class ListComponent implements OnInit {
+  detail: Detail[]
+  public newArr: Array<Object> = [
+    {
+      CGPCGP: '',
+      CGPDSC: '',
+      CGPPIM: '',
+      CGPPTR: '',
+      CGPLCUSR: '',
+      CGPLCDAT: '',
+      CGPDLT: ''
+    },
+  ];
+
   ngOnInit(): void {
   }
 
   public xmlItems: any;
+
   constructor(private _http: HttpClient, private router: Router) {
     this.loadXML();
   }
+
   loadXML() {
     this._http.get('/assets/customergroup.xml',
       {
@@ -37,21 +52,22 @@ export class ListComponent implements OnInit {
   parseXML(data) {
     return new Promise(resolve => {
       var k: string | number,
-        arr = [],
+        secondArr = [],
         parser = new xml2js.Parser(
           {
             trim: true,
             explicitArray: true
           });
       // console.log(data)
-
+      this.newArr = secondArr
       parser.parseString(data, function (err, result) {
         var obj = result.Recordset;
         console.log(obj)
         for (k in obj.Record) {
           var item = obj.Record[k];
+
           console.log(item);
-          arr.push({
+          secondArr.push({
             CGPCGP: item.CGPCGP[0],
             CGPDSC: item.CGPDSC[0],
             CGPPIM: item.CGPPIM[0],
@@ -61,12 +77,14 @@ export class ListComponent implements OnInit {
             CGPDLT: item.CGPDLT[0]
           });
         }
-        resolve(arr);
+
+        resolve(secondArr);
       });
     });
   }
-  updateCustomer(CGPCGP: string) {
-    console.log(CGPCGP)
+  updateCustomer(CGPCGP: Detail) {
+    console.log(this.newArr)
+    window.localStorage.setItem("editUserId", CGPCGP.toString());
     this.router.navigate(['update', CGPCGP]);
   }
 }

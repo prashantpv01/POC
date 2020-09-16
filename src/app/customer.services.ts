@@ -1,55 +1,47 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
-
-import { Observable, throwError } from 'rxjs';
-import { catchError } from 'rxjs/operators';
+import { Detail } from './customer/detail';
+import { Observable } from 'rxjs';
 
 @Injectable({
     providedIn: 'root'
 })
 export class PostService {
-    private apiURL = "https://gfroehlich.spms.lear.com/rest";
 
-    httpOptions = {
-        headers: new HttpHeaders({
-            'Content-Type': 'text/xml',
-            'Accept': 'application/xml',
-            'Response-Type': 'text'
-        })
-    }
-
+    customerDetail: Detail[] = [];
     constructor(private httpClient: HttpClient) { }
 
-    update() {
-        const postedData = `
-           <Record>
+    get(CGPCGP: number): Observable<any> {
+        return this.httpClient.get('/assets/customergroup.xml/' + CGPCGP);
+    }
+    updateCustomer(CGPCGP) {
+        let customer: Detail;
+        this.httpClient.post('/assets/customergroup.xml',
+            {
+                headers: new HttpHeaders()
+                    .set('Content-Type', 'text/xml')
+                    .append('Access-Control-Allow-Methods', 'GET')
+                    .append('Access-Control-Allow-Origin', '*')
+                    .append('Access-Control-Allow-Headers', "Access-Control-Allow-Headers, Access-Control-Allow-Origin, Access-Control-Request-Method"),
+                responseType: 'text'
+            })
+            .subscribe((data) => {
+                console.log(data)
+                this.customerDetail.map(val => {
+                    if (val.CGPCGP == CGPCGP) customer = val;
+                });
+                return customer;
+            });
 
-        <CPTCGP>AU</CPTCGP>
-
-        <CPTCPT>AU326</CPTCPT>
-
-        <CPTDSC>326 - Audi Q3 II</CPTDSC>
-
-        <CPTCFD>Petra Nowak</CPTCFD>
-
-        <CPTCML></CPTCML>
-
-        <CPTMLO></CPTMLO>
-
-        <CPTMLF>Audi</CPTMLF>
-
-        <CPTLCUSR>ZPalotai</CPTLCUSR>
-
-        <CPTLCDAT>2019-02-20</CPTLCDAT>
-
-        <CPTDLT>N</CPTDLT>
-
-    </Record>`;
-        return this.httpClient.post(this.apiURL, postedData, this.httpOptions)
-            .subscribe(
-                result => {
-                    console.log(result);  //<- XML response is in here *as plain text*
-                },
-                error => console.log('There was an error: ', error));
+    }
+    customerEdit(customer) {
+        let x: Boolean = false;
+        this.customerDetail.map((val, index) => {
+            if (val.CGPCGP === customer.CGPCGP) {
+                this.customerDetail[index] =
+                    customer; x = true
+            }
+        });
+        return x
     }
 }
