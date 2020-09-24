@@ -1,28 +1,37 @@
-<div class="container">
-  <h2>Update Customer Info</h2>
-  <div style="width: 400px;">
-    <!-- <form (ngSubmit)="onSubmit()">
-      <div class="form-group">
-        <input type="text" class="form-control w-100" [(ngModel)]="details.CGPCGP" name="CGPCGP" placeholder="CGPCGP">
-      </div>
-       <div class="form-group">
-        <input type="text" class="form-control w-100" formControlName="CGPDLT" name="CGPDLT" placeholder="CGPDLT">
-      </div>
-      <div class="form-group">
-        <input type="text" class="form-control w-100" formControlName="CGPDSC" name="CGPDSC" placeholder="CGPDSC">
-      </div>
-      <div class="form-group">
-        <input type="text" class="form-control w-100" formControlName="CGPLCDAT" name="CGPLCDAT" placeholder="CGPLCDAT">
-      </div>
-      <div class="form-group">
-        <input type="text" class="form-control w-100" formControlName="CGPLCUSR" name="CGPLCUSR" placeholder="CGPLCUSR">
-      </div>
-      <div class="form-group">
-        <input type="text" class="form-control w-100" formControlName="CGPPIM" name="CGPPIM" placeholder="CGPPIM">
-      </div>
-      <div class="form-group">
-        <input type="text" class="form-control w-100" formControlName="CGPPTR" name="CGPPTR" placeholder="CGPPTR">
-      </div> 
-    </form>
-    <button type="submit" class="btn btn-success">Submit</button> -->
-  </div>
+<div class="container mt-5">
+  <h4>{{header}}</h4>
+
+  <form (ngSubmit)="onSubmit(f)" #f="ngForm">
+    <div class="form-group">
+      <label for="">CGPCGP</label>
+      <input type="text" class="form-control" [ngModel]="customer.CGPCGP" name="CGPCGP" />
+    </div>
+    <div class="form-group">
+      <label for="">CGPDSC</label>
+      <input type="text" class="form-control" [ngModel]="customer.CGPDSC" name="CGPDSC" />
+    </div>
+    <div class="form-group">
+      <label for="">CGPPIM</label>
+      <input type="text" class="form-control" [ngModel]="customer.CGPPIM" name="CGPPIM" />
+    </div>
+    <div class="form-group">
+      <label for="">CGPPTR</label>
+      <input type="text" class="form-control" [ngModel]="customer.CGPPTR" name="CGPPTR" />
+    </div>
+    <div class="form-group">
+      <label for="">CGPLCUSR</label>
+      <input type="text" class="form-control" [ngModel]="customer.CGPLCUSR" name="CGPLCUSR" />
+    </div>
+    <div class="form-group">
+      <label for="">CGPLCDAT</label>
+      <input type="text" class="form-control" [ngModel]="customer.CGPLCDAT" name="CGPLCDAT" />
+    </div>
+    <div class="form-group">
+      <label for="">CGPDLT</label>
+      <input type="text" class="form-control" [ngModel]="customer.CGPDLT" name="CGPDLT" />
+    </div>
+    <div class="form-group">
+      <button type="submit" class="btn btn-primary">Save</button>
+    </div>
+  </form>
+</div>

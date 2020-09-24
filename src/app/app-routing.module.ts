@@ -9,7 +9,11 @@ const routes: Routes = [
     component: ListComponent
   },
   {
-    path: 'update/:CGPCGP',
+    path: 'customer/edit/:CGPCGP',
+    component: UpdateComponent
+  },
+  {
+    path: 'customer/add/:CGPCGP',
     component: UpdateComponent
   }
 ];

@@ -1,4 +1,6 @@
 <div class="container">
+  <a [routerLink]="['/customer/add/0']" routerLinkActive="router-link-active" class="btn btn-primary mt-5 mb-3">Add
+    Customer</a>
   <table class="table table-bordered table-hover">
     <tr>
       <th>Id</th>
@@ -9,8 +11,9 @@
       <th>Dummy</th>
       <th>Dummy</th>
       <th></th>
+      <th></th>
     </tr>
-    <tr *ngFor="let item of xmlItems">
+    <tr *ngFor="let item of customers">
       <td>{{item.CGPCGP}}</td>
       <td>{{item.CGPDSC}}</td>
       <td>{{item.CGPPIM}}</td>
@@ -18,7 +21,9 @@
       <td>{{item.CGPLCUSR}}</td>
       <td>{{item.CGPLCDAT}}</td>
       <td>{{item.CGPDLT}}</td>
-      <td><button type="button" (click)="updateCustomer(item.CGPCGP)">Edit</button></td>
+      <td><a [routerLink]="['/customer/edit/', item.CGPCGP]" routerLinkActive="router-link-active"
+          class="btn btn-primary">Edit</a> </td>
+      <td><button (click)=onDelete(item.CGPCP) class="btn btn-danger">Delete</button></td>
     </tr>
   </table>
 </div>

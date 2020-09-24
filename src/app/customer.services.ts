@@ -1,47 +1,42 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Detail } from './customer/detail';
-import { Observable } from 'rxjs';
+import xml2js from 'xml2js'
+import { Customer } from './models/customer.model'
 
 @Injectable({
     providedIn: 'root'
 })
 export class PostService {
+    customers: Customer[] = [
+        {
+            CGPCGP: 'AU',
+            CGPDSC: 'AU - Audi',
+            CGPPIM: 'XMLPDF',
+            CGPPTR: '1',
+            CGPLCUSR: 'ZPalotai',
+            CGPLCDAT: '2017-12-07',
+            CGPDLT: 'N'
+        }
+    ]
 
-    customerDetail: Detail[] = [];
-    constructor(private httpClient: HttpClient) { }
+    constructor() { }
 
-    get(CGPCGP: number): Observable<any> {
-        return this.httpClient.get('/assets/customergroup.xml/' + CGPCGP);
+    onGet() {
+        return this.customers
     }
-    updateCustomer(CGPCGP) {
-        let customer: Detail;
-        this.httpClient.post('/assets/customergroup.xml',
-            {
-                headers: new HttpHeaders()
-                    .set('Content-Type', 'text/xml')
-                    .append('Access-Control-Allow-Methods', 'GET')
-                    .append('Access-Control-Allow-Origin', '*')
-                    .append('Access-Control-Allow-Headers', "Access-Control-Allow-Headers, Access-Control-Allow-Origin, Access-Control-Request-Method"),
-                responseType: 'text'
-            })
-            .subscribe((data) => {
-                console.log(data)
-                this.customerDetail.map(val => {
-                    if (val.CGPCGP == CGPCGP) customer = val;
-                });
-                return customer;
-            });
 
+    onAdd(customer: Customer) {
+        this.customers.push(customer)
     }
-    customerEdit(customer) {
-        let x: Boolean = false;
-        this.customerDetail.map((val, index) => {
-            if (val.CGPCGP === customer.CGPCGP) {
-                this.customerDetail[index] =
-                    customer; x = true
-            }
-        });
-        return x
+
+    onDelete(CGPCGP: string) {
+        let customer = this.customers.find(x => x.CGPCGP === CGPCGP)
+        let index = this.customers.indexOf(customer, 0)
+        this.customers.splice(index, 1)
+    }
+
+    onEdit(CGPCGP: string) {
+        return this.customers.find(x => x.CGPCGP === CGPCGP)
     }
 }
